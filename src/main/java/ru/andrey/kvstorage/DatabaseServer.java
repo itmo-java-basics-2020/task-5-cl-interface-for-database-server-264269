@@ -1,7 +1,13 @@
 package ru.andrey.kvstorage;
 
+import ru.andrey.kvstorage.console.DatabaseCommand;
 import ru.andrey.kvstorage.console.DatabaseCommandResult;
+import ru.andrey.kvstorage.console.DatabaseCommands;
 import ru.andrey.kvstorage.console.ExecutionEnvironment;
+import ru.andrey.kvstorage.exception.DatabaseException;
+import ru.andrey.kvstorage.logic.Database;
+
+import java.io.Console;
 
 public class DatabaseServer {
 
@@ -11,11 +17,17 @@ public class DatabaseServer {
         this.env = env;
     }
 
-    public static void main(String[] args) {
-
-    }
+    public static void main(String[] args) {    }
 
     DatabaseCommandResult executeNextCommand(String commandText) {
-        throw new UnsupportedOperationException();
+        try {
+            String[] commandParameters = commandText.split(" ");
+            return DatabaseCommands.
+                    valueOf(commandParameters[0]).
+                    getCommand(this.env, commandParameters).
+                    execute();
+        } catch (Exception e) {
+            return DatabaseCommandResult.error(e.getMessage());
+        }
     }
 }

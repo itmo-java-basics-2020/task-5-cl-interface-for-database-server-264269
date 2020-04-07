@@ -7,7 +7,7 @@ public interface Database {
 
     void createTableIfNotExists(String tableName) throws DatabaseException;
 
-    void createTableIfNotExists(String tableName, int segmentSizeInBytes) throws DatabaseException;
+    //void createTableIfNotExists(String tableName, int segmentSizeInBytes) throws DatabaseException;
 
     void write(String tableName, String objectKey, String objectValue) throws DatabaseException;
 
