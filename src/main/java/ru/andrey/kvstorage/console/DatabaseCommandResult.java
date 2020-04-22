@@ -44,7 +44,7 @@ public interface DatabaseCommandResult {
         return new DatabaseCommandResult() {
             @Override
             public Optional<String> getResult() {
-                return Optional.of(message);
+                return Optional.empty();
             }
 
             @Override
