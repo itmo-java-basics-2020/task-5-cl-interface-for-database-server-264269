@@ -16,7 +16,7 @@ public class CommandCreateDatabase implements DatabaseCommand{
 
     @Override
     public DatabaseCommandResult execute() {
-        if (env.getDatabase(databaseName) == null) {
+        if (!env.equals(null) && env.getDatabase(databaseName).isEmpty()) {
             env.addDatabase(new Database() {
                 @Override
                 public String getName() {

@@ -18,7 +18,7 @@ public enum DatabaseCommands implements DatabaseCommandIdentifier{
         @Override
         public DatabaseCommand getCommand(ExecutionEnvironment env, String[] args) throws Exception {
             if (args.length == 3) {
-                return new CommandCreateTable(env.getDatabase(args[1]), args[2]);
+                return new CommandCreateTable(env, args[1], args[2]);
             } else {
                 throw new Exception("Wrong number of arguments");
             }
@@ -27,7 +27,7 @@ public enum DatabaseCommands implements DatabaseCommandIdentifier{
         @Override
         public DatabaseCommand getCommand(ExecutionEnvironment env, String[] args) throws Exception {
             if (args.length == 5) {
-                return new CommandUpdateKey(env.getDatabase(args[1]), args[2], args[3], args[4]);
+                return new CommandUpdateKey(env, args[1], args[2], args[3], args[4]);
             } else {
                 throw new Exception("Wrong number of arguments");
             }
@@ -36,7 +36,7 @@ public enum DatabaseCommands implements DatabaseCommandIdentifier{
         @Override
         public DatabaseCommand getCommand(ExecutionEnvironment env, String[] args) throws Exception {
             if (args.length == 4) {
-                return new CommandReadKey(env.getDatabase(args[1]), args[2], args[3]);
+                return new CommandReadKey(env, args[1], args[2], args[3]);
             } else {
                 throw new Exception("Wrong number of arguments");
             }

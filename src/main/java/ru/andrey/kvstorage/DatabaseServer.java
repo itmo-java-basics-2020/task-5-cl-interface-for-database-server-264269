@@ -1,9 +1,6 @@
 package ru.andrey.kvstorage;
 
-import ru.andrey.kvstorage.console.DatabaseCommand;
-import ru.andrey.kvstorage.console.DatabaseCommandResult;
-import ru.andrey.kvstorage.console.DatabaseCommands;
-import ru.andrey.kvstorage.console.ExecutionEnvironment;
+import ru.andrey.kvstorage.console.*;
 import ru.andrey.kvstorage.exception.DatabaseException;
 import ru.andrey.kvstorage.logic.Database;
 
